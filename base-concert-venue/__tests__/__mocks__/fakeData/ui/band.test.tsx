@@ -1,5 +1,7 @@
-import BandPage from "@/pages/bands/[bandId]";
 import { render, screen } from "@testing-library/react";
+
+import BandPage from "@/pages/bands/[bandId]";
+
 import { readFakeData } from "..";
 
 test("band page displays correct information", async () => {

@@ -49,17 +49,21 @@ export default function SignIn() {
     { name: "password", display: "Password", default: "test" },
   ];
 
-  const handleSignIn = handleSubmit((data) =>
+  const handleSignIn = handleSubmit((data) => {
+    console.log(data);
     signIn("credentials", {
       ...data,
       redirect: false,
     }).then(
       // @ts-expect-error (docs for signIn return value conflict with TypeScript)
       ({ error }) => {
-        if (error) setAuthError(error);
+        if (error) {
+          console.log(error);
+          setAuthError(error);
+        }
       }
-    )
-  );
+    );
+  });
 
   return (
     <Flex minH="84vh" align="center" justify="center">
